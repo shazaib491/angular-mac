@@ -1,17 +1,3 @@
-<!-- <input type="text" name=""  (input)="onInput($event)" id="">
-
-
-
-<button class="btn btn-primary"  (click)="submitEvent($event)" >Click me </button>
- -->
-
-
-
-<!-- <input type="range" name=""  min="10" max="100"   (input)="onInput($event)" id="">
-
-<p [style.fontSize]="content+'px'">
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem nam, earum tenetur pariatur eligendi mollitia repellat velit dicta delectus dolorem rem excepturi facere. In harum repudiandae molestias optio architecto itaque.
-</p> -->
-
-
-
+<h1>I am your Parent</h1>
+<input type="text" (input)="onInput($event)">
+<app-about-child (customEvent)="submitEvent($event)" [title]="content" ></app-about-child>

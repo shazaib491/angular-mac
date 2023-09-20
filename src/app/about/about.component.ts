@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-
   public content:any;
 
   public onInput(event:any):void{
@@ -14,6 +13,6 @@ export class AboutComponent {
   }
 
   public submitEvent(event:any){
-    console.log("Event Trigger",event.target);
+    console.log("Event Trigger",event);
   }
 }
