@@ -1,3 +1,5 @@
-<input type="text" name="" id=""  (input)="onInput($event)"  class="form-control">
+<h1>Moiz Bhai {{counter}}</h1>
 
-<app-counter-child [parentMessage]="parentMessage" [contentFromParent]="parentContent" (contentFromParentEvent)="childMessage($event)"  ></app-counter-child>
+
+
+<app-counter-child  [(counter)]="counter"  ></app-counter-child>

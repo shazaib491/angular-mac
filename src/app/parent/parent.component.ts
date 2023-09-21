@@ -6,17 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent {
-  public parentContent:string="Hello world"
-  public parentMessage?:string;
-
-  public childMessage(message:any){
-    console.log(message);
-  }
-
-
-  onInput(event:any){
-    const {value}=event.target;
-    this.parentMessage=value;
-  }
+public counter:number=0;
 
 }

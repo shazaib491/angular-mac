@@ -5,17 +5,16 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
   templateUrl: './counter-child.component.html',
   styleUrls: ['./counter-child.component.css']
 })
-export class CounterChildComponent implements OnChanges {
-@Input()  contentFromParent?:string;
-@Input()  parentMessage?:string;
-@Output() contentFromParentEvent:EventEmitter<string> = new EventEmitter();
-ngOnChanges(changes: SimpleChanges): void {
-  console.log(this.parentMessage)
-  console.log(this.contentFromParent)
+export class CounterChildComponent  {
+@Input() counter:number=0;
+@Output() counterChange:EventEmitter<number>=new EventEmitter();
+public increment(){
+  this.counter++;
+  this.counterChange.emit(this.counter);
 }
 
-
-onSubmit(){
-  this.contentFromParentEvent.emit("Data from chold");
+public decrement(){
+  this.counter--;
+  this.counterChange.emit(this.counter);
 }
 }

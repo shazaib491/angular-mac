@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
     </p>
     <div>
       <div [class.active]="isEnabled"  >Hello Wolrd</div>
-      <p [style.color]="color" >sdnfjkbfkjdbfkjasb</p>
+      <p *ngIf="isEnabled" >sdnfjkbfkjdbfkjasb</p>
     </div>
   `,
   styles: [`
@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
   ]
 })
 export class HomeComponent {
-  public isEnabled=true;
-  public color="green"
+  public isEnabled=false;
+  public color="none"
   public imgages="https://picsum.photos/200/300"
 }
