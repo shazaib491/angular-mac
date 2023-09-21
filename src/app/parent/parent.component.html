@@ -1,0 +1,3 @@
+<input type="text" name="" id=""  (input)="onInput($event)"  class="form-control">
+
+<app-counter-child [parentMessage]="parentMessage" [contentFromParent]="parentContent" (contentFromParentEvent)="childMessage($event)"  ></app-counter-child>

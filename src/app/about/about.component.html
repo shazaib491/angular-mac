@@ -1,3 +1,25 @@
-<h1>I am your Parent</h1>
-<input type="text" (input)="onInput($event)">
-<app-about-child (customEvent)="submitEvent($event)" [title]="content" ></app-about-child>
+<h1>Card System</h1>
+<div class="row p-1">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="">Title</label>
+      <input type="text" name="title" id=""  (keypress)="onInput($event)" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Content</label>
+      <input type="text" name="content" (keypress)="onInput($event)" id="" class="form-control">
+    </div>
+    <div class="button-group m-2">
+      <button class="btn btn-primary"  (click)="submitEvent($event)" >Submit</button>
+      <button class="btn btn-danger">Reset</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3 m-1" *ngFor="let card of cards">
+    <app-about-child [data]="card"  (customEvent)="addCart($event)" ></app-about-child>
+  </div>
+
+</div>
+

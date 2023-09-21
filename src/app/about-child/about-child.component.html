@@ -1,3 +1,11 @@
-<p class="border border-danger border-5">about-child works! {{title}}</p>
 
-<button (click)="sendData()" >cLICK</button>
+<div class="card bg-primary text-white text-center">
+  <div class="card-body">
+    <h1 class="card-title">{{data.title}}</h1>
+    <p class="card-text">{{data.content}}</p>
+    <button class="btn btn-primary"  (click)="addToCart(data.id)" >Add To Cart</button>
+  </div>
+</div>
+
+
+

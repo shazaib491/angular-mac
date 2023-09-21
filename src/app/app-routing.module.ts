@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from 'src/login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CounterChildComponent } from './counter-child/counter-child.component';
+import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,10 @@ const routes: Routes = [
   {
     path:'register',
     component:RegisterComponent
+  },
+  {
+    path:'counter',
+    component:ParentComponent
   }
 ];
 

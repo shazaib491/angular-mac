@@ -1,36 +1,22 @@
-import { Component, Input, Output, SimpleChange,EventEmitter } from '@angular/core';
+import { Component, Input, Output, SimpleChange,EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-about-child',
   templateUrl: './about-child.component.html',
   styleUrls: ['./about-child.component.css']
 })
-export class AboutChildComponent {
-@Input() title:any;
-@Output() customEvent:any=new EventEmitter<string>();
+export class AboutChildComponent implements OnChanges{
+@Input() data:any;
+@Output() customEvent=new EventEmitter();
 
-constructor(){
-  console.log(this.title);
-}
 
-ngOnChange(change:SimpleChange){
-  console.log(change)
-  console.log(this.title);
+ngOnChanges(changes: SimpleChanges): void {
+
 }
 
 
-public sendData(){
-  this.customEvent.emit("data from child");
+public addToCart(index:any){
+  this.customEvent.emit(index);
 }
-
-ngOnInit(){
-  console.log(this.title);
-}
-
-
-ngAfterViewInit(){
-  console.log(this.title);
-}
-
 
 }

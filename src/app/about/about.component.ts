@@ -6,13 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  public content:any;
+  public content:any={};
+
+
+ public cards = [
+    { id:1,title: 'Card 1', content: 'This is card 1.' },
+    { id:2,title: 'Card 2', content: 'This is card 2.' },
+    { id:3,title: 'Card 3', content: 'This is card 3.' }
+  ];
+
+  public bucket:any[]=[];
 
   public onInput(event:any):void{
-    this.content=event.target.value;
+    const {name,value}=event.target;
+    this.content={...this.content,[name]:value,};
   }
 
   public submitEvent(event:any){
-    console.log("Event Trigger",event);
+    this.cards.push(this.content);
+    this.content={};
+  }
+
+  public addCart(index:any){
+    this.bucket.push(this.cards[index-1])
+    console.log(this.bucket)
+
   }
 }
